@@ -1,0 +1,15 @@
+All website HTML Files Go in here.
+
+The pages must have basic Structure, basic content and Images.
+
+At this stage, it is not a requirement that your website be fully responsive to different screen sizes etc. You just need to have all content uploaded in basic format and structure.
+
+As per POE File you must have :
+
+index.html
+About.html
+Services.html
+Enquiry.html
+Contact Us.html
+
+And any other pages you may need.
