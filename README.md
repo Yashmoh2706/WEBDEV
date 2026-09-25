@@ -85,6 +85,8 @@ All four pages are linked directly from the homepage via the main navigation men
 | 18 Aug 2026 | Built about.html, services.html, enquiry.html, and contact.html |
 | 18 Aug 2026 | Added client-supplied promotional images (service badge, cross-border and Durban Port flyers) to About and Services pages |
 | 18 Aug 2026 | Fixed image path errors (missing `images/` folder reference) across all pages |
+| 24 Sep 2026 | Began part 2- CSS styling and responsive design |
+| 25 Sep 2026 | Created external stylesheet (style.css) and linking to all 5 pages |
 
 ## References
 - Starline Logistics (2026) *Company Profile*. [PDF]. Durban: Starline Logistics.
@@ -92,3 +94,14 @@ All four pages are linked directly from the homepage via the main navigation men
 - Pexels (2026) *Truck traveling a highway*. Available at: https://www.pexels.com/photo/truck-traveling-a-highway-14005602/ (Accessed: August 2026).
 - Pexels (2026) *Trucks and cars on a highway*. Available at: https://www.pexels.com/photo/trucks-and-cars-on-a-highway-16325212/ (Accessed: August 2026).
 - Pexels (2026) *Cargo container lot*. Available at: https://www.pexels.com/photo/cargo-container-lot-906494/ (Accessed: August 2026).
+
+## Responsive Design Testing 
+
+**Desktop View:**
+![Desktop View](images/desktop-view.jpeg)
+
+**Tablet View:**
+![Tablet View](images/tablet-view.jpeg)
+
+**Mobile View:**
+![Mobile View](images/mobile-view.jpeg)
