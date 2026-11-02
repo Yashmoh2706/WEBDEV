@@ -1,11 +1,13 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content=""width=device-width, intial-scale="1.0">
-    <title>Starline Logistics | Moving Goods With Care, Precision and Purpose</title>
-    <meta name="description" content="Starline Logistics is a Durban-based road transport and freight company offering local, national and cross-border logistics solutions across South Africa.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Freight Quote | Starline Logistics</title>
+    <meta name="description" content="Request a freight quote or ask about subcontracting with Starline Logistics.Get an indicative cost and availability for your load.">
+    <meta name="keywords" content="freight quote South Africa, transport qoute Durban, subcontracting partnership, cross-border freight qoute">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -14,7 +16,8 @@
             <span class="logo-icon">&#9733;</span>
             <span>STARLINE LOGISTICS</span>
         </div>
-        <nav>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -27,42 +30,80 @@
 
     <main>
 
-        <section class="page-banner small-banner>
+        <section class="page-banner small-banner">
             <h1>Get a Quote / Partner With Us</h1>
         </section>
 
-        <section class="enquiry-form-section">
-            <h2>Enquiry Form</h2>
-            <form action="#" method="POST" class="enquiry-form">
+       <form action="https://formspree.io/f/mrpplbwz" method="POST" class="enquiry-form" id="enquiry-form">
 
-                <label for="fullname">FullName:</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="e.g. Thabo Mokoena" required minlength="3" maxlength="60">
+    <span class="error" id="fullname-error" role="alert"></span>
 
-                <label for="company">Company Name:</label>
-                <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+    <label for="company">Company Name:</label>
+    <input type="text" id="company" name="company" placeholder="Enter your company name" required minlength="2" maxlength="80">
+    <span class="error" id="company-error" role="alert"></span>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="name@company.co.za" required>
+    <span class="error" id="email-error" role="alert"></span>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-             
-                <fieldset>
-                    <legend>Enquiry Type</legend>
-                    <label class="radio-label">
-                        <input type="radio" name="enquiry_type" value="freight-quote" checked> Freight Quote
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="enquiry_type" value="subcontracting"> Subcontracting Partnership 
-                    </label>
-                </fieldset>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="e.g. 060 225 8475" required pattern="^(\+27|0)[1-9][0-9]{8}$">
+    <span class="error" id="phone-error" role="alert"></span>
 
-                <label for="message">Message / Load Details</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell us about your load or enquiry"></textarea>
+    <fieldset>
+        <legend>Enquiry Type</legend>
+        <label class="radio-label"><input type="radio" name="enquiry_type" value="freight-quote" checked> Freight Quote</label>
+        <label class="radio-label"><input type="radio" name="enquiry_type" value="subcontracting"> Subcontracting Partnership</label>
+    </fieldset>
 
-                <button type="submit" class="btn">Submit Enquiry</button>
-            </form>
-        </section>
+    <div id="freight-fields">
+        <label for="service">Service Needed:</label>
+        <select id="service" name="service" required>
+            <option value="">Choose a service</option>
+            <option value="road-freight">Road Freight Transport</option>
+            <option value="container">Container Transport</option>
+            <option value="clearing-forwarding">Clearing &amp; Forwarding</option>
+            <option value="dedicated-fleet">Contracted &amp; Dedicated Fleet Services</option>
+            <option value="git-insurance">Goods-in-Transit Insurance</option>
+            <option value="warehousing">Warehousing Coordination</option>
+        </select>
+        <span class="error" id="service-error" role="alert"></span>
+
+        <label for="route">Route:</label>
+        <select id="route" name="route" required>
+            <option value="">Choose a route</option>
+            <option value="local-durban">Local (Durban area)</option>
+            <option value="durban-jhb">Durban to Johannesburg corridor</option>
+            <option value="national">National (other provinces)</option>
+            <option value="cross-border">Cross-border (SADC region)</option>
+        </select>
+        <span class="error" id="route-error" role="alert"></span>
+
+        <label for="weight">Estimated Load Weight (tonnes):</label>
+        <input type="number" id="weight" name="weight" min="0.1" max="40" step="0.1" placeholder="e.g. 12" required>
+        <span class="error" id="weight-error" role="alert"></span>
+
+        <label for="pickupDate">Preferred Pickup Date:</label>
+        <input type="date" id="pickupDate" name="pickupDate" required>
+        <span class="error" id="pickupDate-error" role="alert"></span>
+    </div>
+
+    <div id="subcontract-fields" hidden>
+        <label for="fleetSize">Number of Vehicles in Your Fleet:</label>
+        <input type="number" id="fleetSize" name="fleetSize" min="1" max="500" step="1" placeholder="e.g. 8" required>
+        <span class="error" id="fleetSize-error" role="alert"></span>
+    </div>
+
+    <label for="message">Message / Load Details:</label>
+    <textarea id="message" name="message" rows="5" maxlength="500" minlength="10" placeholder="Tell us about your load or enquiry" required></textarea>
+    <span class="error" id="message-error" role="alert"></span>
+
+    <button type="submit" class="btn" id="enquiry-submit">Submit Enquiry</button>
+</form>
+
+<div id="enquiry-response" class="response-box" aria-live="polite" hidden></div>
 
     </main>
 
@@ -86,6 +127,6 @@
         <p class="copyright">&copy; 2026 Starline Logistics. All rights reserved.</p>
     </footer>
 
-    <script scr="js/script.js"></script>
+    
 </body>
 </html>

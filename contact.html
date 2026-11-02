@@ -1,11 +1,17 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content=""width=device-width, intial-scale="1.0">
-    <title>Starline Logistics | Moving Goods With Care, Precision and Purpose</title>
-    <meta name="description" content="Starline Logistics is a Durban-based road transport and freight company offering local, national and cross-border logistics solutions across South Africa.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Starline Logistics | Durban Head Office & Map</title>
+    <meta name="description" content="Contact Starline Logistics at 41 Cannon Avenue, Berea, Durban. Send a message, call 060 225 8475 or find our head office on the map.">
+    <meta name="keywords" content="contact starline logistics, logistics company Durban address, freight company phone number, Berea Durban">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -14,7 +20,8 @@
             <span class="logo-icon">&#9733;</span>
             <span>STARLINE LOGISTICS</span>
         </div>
-        <nav>
+       <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+       <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -29,7 +36,6 @@
 
         <section class="page-banner small-banner">
             <h1>Contact Us</h1>
-            <p>Let's move foward together</p>
         </section>
 
         <section class="contact-grid">
@@ -41,41 +47,49 @@
                 <p><strong>Social Media:</strong> @starline_logistics1</p>
             </div>
             <div class="contact-form-wrap">
-                <h2>Send a Message</h2>
-                <form action="#" method="POST" class="enquiry-form">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <h2>Send a Message</h2>
+            <form action="#" method="POST" class="enquiry-form" id="contact-form">
+                <label for="cname">Name:</label>
+                <input type="text" id="cname" name="name" placeholder="e.g. Thabo Mokoena" required minlength="3" maxlength="60">
+                <span class="error" id="cname-error" role="alert"></span>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="cemail" name="cemail" placeholder="Enter your email" required>
+                <label for="cemail">Email:</label>
+                <input type="email" id="cemail" name="email" placeholder="name@company.co.za" required>
+                <span class="error" id="cemail-error" role="alert"></span>
 
-                    <label for="cmessage">Message:</label>
-                    <textarea id="cmessage" name="cmessage" rows="4" placeholder="Enter your message"></textarea>
+                <label for="cphone">Phone (optional):</label>
+                <input type="tel" id="cphone" name="phone" placeholder="e.g. 060 225 8475" pattern="^(\+27|0)[1-9][0-9]{8}$">
+                <span class="error" id="cphone-error" role="alert"></span>
 
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                <label for="ctype">Message Type:</label>
+                <select id="ctype" name="type" required>
+                  <option value="">Choose a message type</option>
+                  <option value="General Enquiry">General enquiry</option>
+                  <option value="Feedback">Feedback</option>
+                  <option value="Complaint">Complaint</option>
+                 <option value="Partnership">Partnership</option>
+                </select>
+                <span class="error" id="ctype-error" role="alert"></span>
+
+                <label for="cmessage">Message:</label>
+                <textarea id="cmessage" name="message" rows="5" minlength="20" maxlength="1000" placeholder="Enter your message" required></textarea>
+                <span class="error" id="cmessage-error" role="alert"></span>
+
+               <button type="submit" class="btn">Prepare Email</button>
+         </form>
+         <div id="email-output" class="response-box" aria-live="polite" hidden></div>
             </div>
         </section>
 
         <section class="map-section">
-            <h2>Find Us</h2>
-            <div class="card-grid two-col">
-                <div class="map-embed">
-                    <h3>Durban (Head Office)</h3>
-                    <iframe
-                       src="https://www.google.com/maps?q=41+Cannon+Avenue,+Berea,+Durban,+4001&output=embed"
-                          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                </div>
-                <div class="map-embed">
-                    <h3>Johannesburg (Route Hub)</h3>
-                    <iframe
-                       src="https://www.google.com/maps?q=Johannesburg,+South+Africa&output=embed"
-                          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </section>
+    <h2>Find Us</h2>
+    <div class="map-buttons">
+        <button type="button" class="btn btn-outline" id="map-durban">Durban head office</button>
+        <button type="button" class="btn btn-outline" id="map-jhb">Johannesburg hub</button>
+        <button type="button" class="btn btn-outline" id="map-route">Show corridor</button>
+    </div>
+    <div id="map" role="region" aria-label="Map of the Durban head office and Johannesburg route hub"></div>
+</section>
 
     </main>
 
@@ -83,7 +97,7 @@
         <div class="footer-content">
             <div class="footer-col">
                 <h4>Starline Logistics</h4>
-                <p>Safe. Fast. Relaible</p>
+                <p>Safe. Fast. Reliable</p>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
@@ -99,6 +113,6 @@
         <p class="copyright">&copy; 2026 Starline Logistics. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    
 </body>
 </html>

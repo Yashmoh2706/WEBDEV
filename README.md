@@ -105,3 +105,18 @@ All four pages are linked directly from the homepage via the main navigation men
 
 **Mobile View:**
 ![Mobile View](images/mobile-view.jpeg)
+
+| 27 Oct 2026 | Feedback fix: renamed CSS folder to css so the stylesheet loads on case-sensitive servers (Netlify, GitHub Pages) |
+| 27 Oct 2026 | Feedback fix: corrected <!DOCTYPE html> on four pages, the broken viewport meta tag, and scr to src on images and script tags |
+| 27 Oct 2026 | Feedback fix: fixed broken HTML (services.hml link, stray </a>, unclosed tags, <selection>, missing quote on the enquiry banner, duplicate class attribute) |
+| 27 Oct 2026 | Feedback fix: corrected spelling mistakes and the contact form label/id mismatch |
+| 27 Oct 2026 | Added js/script.js, linked on all pages with defer |
+| 27 Oct 2026 | Added mobile hamburger menu, scroll animations and hero fade-in |
+| 27 Oct 2026 | Added FAQ accordion to about.html |
+| 27 Oct 2026 | Replaced static services with a dynamic list with search, filter, sort and a detail modal |
+| 29 Oct 2026 | Replaced Google Maps iframes with an interactive Leaflet map (markers, corridor line, fly-to buttons) |
+| 29 Oct 2026 | Rebuilt enquiry form with JavaScript validation, cost and availability response and AJAX submission |
+| 29 Oct 2026 | Rebuilt contact form with validation and a compiled email to the company address |
+| 02 Oct 2026 | SEO: unique titles, descriptions, keywords, descriptive image names, alt text, robots.txt, sitemap.xml |
+| 02 Oct 2026 | Added security headers and compressed large screenshots for page speed |
+| 02 Oct 2026 | Deployed the website to Netlify |

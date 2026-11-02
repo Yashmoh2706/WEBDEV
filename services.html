@@ -1,11 +1,13 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content=""width=device-width, intial-scale="1.0">
-    <title>Starline Logistics | Moving Goods With Care, Precision and Purpose</title>
-    <meta name="description" content="Starline Logistics is a Durban-based road transport and freight company offering local, national and cross-border logistics solutions across South Africa.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight & Transport Services | Starline Logistics</title>
+    <meta name="description" content="Road freight, container transport, clearing and fowarding, dedicated fleets, insurance and warehousing coordination from Starline Logistics, Durban.">
+    <meta name="keywords" content="road  freight services, container transport Durban, clearing and fowarding , dedicated fleet, goods in transit insurance">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -14,9 +16,10 @@
             <span class="logo-icon">&#9733;</span>
             <span>STARLINE LOGISTICS</span>
         </div>
-        <nav>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <nav id="main-nav">
             <ul>
-                <li><a href="index.html"></a>Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="enquiry.html">Enquiry</a></li>
@@ -29,57 +32,65 @@
 
         <section class="page-banner">
             <img src="images/cross-border-promo.jpg" alt="stackedcargo shipping containers">
-            <h1>What We Offer/h1>
+            <h1>What We Offer</h1>
         </section>
 
         <section class="services-core">
-            <h2>Core Services</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Road Freight Transport</h3>
-                    <p>Full and shared loads ,moving general cargo, dry goods and FMCG across national routes.</p>
-                </div>
-                <div class="card">
-                    <h3>Container Transport</h3>
-                    <p>Container repositioning, full haulage,and port collection services for import and export cargo.</p>
-                </div>
-                <div class="card">
-                    <h3>Clearing &amp; Forwarding</h3>
-                    <p>Subcontracted clearing and forwarding, coordinating closely with customs and port authorities.</p>
-                </div>
-                <div class="card">
-                    <h3>Contracted &amp; Dedicated Fleet Services</h3>
-                    <p>Long or short term fleet allocation with transparent updates and communication.</p>
-                </div>
-            </div>
-        </section>
+    <h2>Our Services</h2>
+    <p>Search, filter or sort our services. Select "Learn more" for full details.</p>
 
-        <section class="capabilities">
-            <h2>Additional Capabilities</h2>
-            <div class="card-grid two-col">
-                <div class="card">
-                    <h3>Cross-Goods-in-Transit Insurance</h3>
-                    <p>Coverage for client cargo while on the move, giving added security and peace of mind.</p>
-                </div>
-                <div class="card">
-                    <h3>Warehousing Coordination</h3>
-                    <p>Transfer between deopts, along with handling and staging support.</p>
-                </div>
-            </div>
-            <a href="enquiry.html" class="btn"Request a Quote &rarr</a>
-        </section>
+    <div class="services-controls">
+        <div class="control-group">
+            <label for="service-search">Search services</label>
+            <input type="search" id="service-search" placeholder="e.g. container, insurance">
+        </div>
+        <div class="control-group">
+            <label for="service-category">Type</label>
+            <select id="service-category">
+                <option value="all">All services</option>
+                <option value="Core">Core services</option>
+                <option value="Additional">Additional capabilities</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="service-sort">Sort by</label>
+            <select id="service-sort">
+                <option value="name-asc">Name (A to Z)</option>
+                <option value="name-desc">Name (Z to A)</option>
+                <option value="category">Type</option>
+            </select>
+        </div>
+    </div>
 
-        <section class="promo-section">
-            <h2>For International &amp; Cross-Border Clients</h2>
-            <div class="card-grid two-col">
-                <div class="promo-card">
-            <img scr="images/durban-port-promo.jpg" alt="Starline Logistics promotion: Transporting goods to Durban Port for international companies">
-                </div>
-                <div class="promo-card">
-                   <img scr="images/cross-border-promo.jpg" alt="starline Logistics cross-border expertiseacross SADC region">
-                </div>
-            </div>
-        </section>
+    <p id="results-count" class="results-count" aria-live="polite"></p>
+    <div id="services-list" class="card-grid"></div>
+    <a href="enquiry.html" class="btn">Request a Quote &rarr;</a>
+</section>
+
+       <section class="promo-section">
+    <h2>For International &amp; Cross-Border Clients</h2>
+    <p>Select a picture to view it larger.</p>
+    <div class="gallery">
+        <figure class="gallery-item">
+            <a href="images/durban-port-promo.jpg" class="lightbox-link" data-caption="Transporting goods to the Port of Durban">
+                <img src="images/durban-port-promo.jpg" alt="Starline Logistics promotion: transporting goods to Durban Port for international companies" width="1408" height="768" loading="lazy">
+            </a>
+            <figcaption>Durban Port freight</figcaption>
+        </figure>
+        <figure class="gallery-item">
+            <a href="images/cross-border-promo.jpg" class="lightbox-link" data-caption="Cross-border expertise across the SADC region">
+                <img src="images/cross-border-promo.jpg" alt="Starline Logistics cross-border expertise across the SADC region" width="1376" height="768" loading="lazy">
+            </a>
+            <figcaption>Cross-border expertise</figcaption>
+        </figure>
+        <figure class="gallery-item">
+            <a href="images/starline-badge.jpg" class="lightbox-link" data-caption="Freight solutions, warehousing, national and cross-border logistics">
+                <img src="images/starline-badge.jpg" alt="Starline Logistics service overview: freight solutions, warehousing, national logistics, cross-border logistics" width="1024" height="1024" loading="lazy">
+            </a>
+            <figcaption>Service overview</figcaption>
+        </figure>
+    </div>
+</section>
 
     </main>
 
@@ -103,6 +114,6 @@
         <p class="copyright">&copy; 2026 Starline Logistics. All rights reserved.</p>
     </footer>
 
-    <script scr="js/script.js"></script>
+    
 </body>
 </html>

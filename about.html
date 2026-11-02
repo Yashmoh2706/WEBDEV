@@ -1,11 +1,13 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content=""width=device-width, intial-scale="1.0">
-    <title>Starline Logistics | Moving Goods With Care, Precision and Purpose</title>
-    <meta name="description" content="Starline Logistics is a Durban-based road transport and freight company offering local, national and cross-border logistics solutions across South Africa.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Starline Logistics | Durban Freight Company</title>
+    <meta name="description" content="Learn about Starline Logistics, a Durban freight company founded in 2020. Our mission,vision, values and subcontracted transporter network.">
+    <meta name="keywords" content="about Starline logistics, Durban freight company,subcontracted transporters, trucking partnership South Africa">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -14,8 +16,8 @@
             <span class="logo-icon">&#9733;</span>
             <span>STARLINE LOGISTICS</span>
         </div>
-        <nav>
-            <!-- Navigation menu -->
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
@@ -33,11 +35,11 @@
             <h1>About Us</h1>
         </section>
 
-        <selection class="our-story">
+        <section class="our-story">
             <p>
                 Starline Logistics was founded in 2020 from a simple belief that reliable, efficient transport should not be complicated.Based in Durban, we specialise in the safe and timely movement of cargo,with a key focus on the Johanesburgto Durban corridor.Ourteam operates with integrity,professionalism,and a commitment to consistent service delivery.
             </p>
-        </selection>
+        </section>
 
         <section class="pillars">
             <h2>Organisational Pillars</h2>
@@ -61,15 +63,38 @@
         </section>
 
         <section class="note-box">
-            <h2>Note/h2>
+            <h2>Note</h2>
                 <p>
                     Starline Logistics does <strong>not</strong> operate its own trucks.We work through a trusted network of subcontracted transporters to ensure flexibilty, efficieny, and wider coverage.We welcome trucking companies who wish to partner with us for subcontracting opportunities.
                 </p>
                 <a href="enquiry.html" class="btn">Partner With Us</a>
         </section>
-
+        
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion">
+        <div class="accordion-item">
+            <h3><button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-1">Does Starline Logistics own its trucks?</button></h3>
+            <div class="accordion-panel" id="faq-1" hidden>
+                <p>No. We work through a trusted network of subcontracted transporters for flexibility and wider coverage.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h3><button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-2">Which routes do you cover?</button></h3>
+            <div class="accordion-panel" id="faq-2" hidden>
+                <p>Local, national and cross-border, with a key focus on the Johannesburg to Durban corridor.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h3><button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-3">Is my cargo insured?</button></h3>
+            <div class="accordion-panel" id="faq-3" hidden>
+                <p>Yes. Goods-in-transit insurance with R2m to R4m coverage is available while your cargo is on the move.</p>
+            </div>
+        </div>
+    </div>
+</section>
         <section class="badge-section">
-            <img scr="images/starline-badge.jpg" alt="Starline Logistics service overview:Freight Solutions, Warehousing, National Logistics, Cross-Border Logistics" class="badge-img">
+            <img src="images/starline-badge.jpg" alt="Starline Logistics service overview:Freight Solutions, Warehousing, National Logistics, Cross-Border Logistics" class="badge-img" loading="lazy">
         </section>
 
     </main>
@@ -94,6 +119,6 @@
         <p class="copyright">&copy; 2026 Starline Logistics. All rights reserved.</p>
     </footer>
 
-    <script scr="js/script.js"></script>
+
 </body>
 </html>
